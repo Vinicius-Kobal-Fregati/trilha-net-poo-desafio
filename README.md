@@ -22,7 +22,7 @@ Você deve criar as suas classes de acordo com o diagrama abaixo:
 O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
 
 ## Diagrama Final
-![Diagrama classes final](Imagens/diagrama-classes-final.png.png)
+![Diagrama classes final](Imagens/diagrama-classes-final.png)
 
 ## Solução
 Foi criado a interface ILoja, ela possui a assinatura do método VerificarAplicativo, assim, a classe que implementar ela, deve implementar também este método. Por reutilização de código, a classe abstrata Smartphone a implementou, seus filhos são a classe Nokia e Iphone. A classe abstrata também interage com a classe estática TorreTelefonia.
@@ -39,7 +39,7 @@ Seus métodos são:
  - void VerificarAplicativo(string aplicativo): Caso tenha sinal, exibe um texto que encontrou o aplicativo, se não estiver com sinal, exibe um texto que não encontrou o aplicativo.
  - string Ligar(): Existe a sobrecarga Ligar(string pessoa), em ambos os casos, exibe uma mensagem que se está ligando ou ligando para alguém, isso caso se tenha sinal.
  - void ReceberLigacao(): Se estiver com sinal, exibe o texto que está recebendo uma ligação.
- - void InstalarAplicativo(string nomeApp) <<abstract>>: Método abstrato que deve ser implementado pela classe filha.
+ - void InstalarAplicativo(string nomeApp) abstract: Método abstrato que deve ser implementado pela classe filha.
  - void ExibirConfiguracoes(): Método abstrato que deve ser implementado pela classe filha.
 
 ### Classe estática TorreTelefonia
@@ -47,12 +47,12 @@ Essa classe não pode ser implementada e também não pode ter construtores, al�
 Ela possuí o atributo TemSinal (bool), esse atributo mostra se através da torre será possível um celular se conectar a rede telefônica.
 
 Seus membros são:
- - bool VerificarSinal(): Retorna o atributo TemSinal.
- - void AlternarSinal(): Altera o valor do atributo TemSinal.
+ - bool VerificarSinal() static: Retorna o atributo TemSinal.
+ - void AlternarSinal() static: Altera o valor do atributo TemSinal.
 
 ### Classe Nokia e Iphone
 Essas classes são filhas da Smartphone, elas possuem dois métodos novos, sendo eles:
- - void ExibirConfiguracoes() <<sealed>>: Mostra um texto com as principais informações do celular, como sua memória e seu IMEI. Por ser selada, seus filhos não podem sobrescrever esse método.
+ - void ExibirConfiguracoes() sealed: Mostra um texto com as principais informações do celular, como sua memória e seu IMEI. Por ser selada, seus filhos não podem sobrescrever esse método.
  - void InstalarAplicativo(string nomeApp): Caso o aplicativo seja encontrado, exibirá uma mensagem que ele foi instalado.
 
 ## Vídeo
