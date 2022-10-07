@@ -7,7 +7,16 @@ namespace DesafioPOO.Models
 
         public override void InstalarAplicativo(string nomeApp)
         {
-            Console.WriteLine($"Instalando o aplicativo \"{nomeApp}\" no Nokia");
+            if(VerificarAplicativo(nomeApp))
+            {
+                Console.WriteLine($"Instalando o aplicativo \"{nomeApp}\" no Nokia");
+            }
+        }
+
+        // Método selado, ele não pode ser sobrescrito nas classes filhas
+        public sealed override void ExibirConfiguracoes()
+        {
+            Console.WriteLine($"As configurações do Nokia {Modelo} são: {Memoria} gigas de armazenamento e IMEI: {IMEI}");
         }
     }
 }

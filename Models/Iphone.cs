@@ -7,7 +7,16 @@ namespace DesafioPOO.Models
 
         public override void InstalarAplicativo(string nomeApp)
         {
-            Console.WriteLine($"Instalando o aplicativo \"{nomeApp}\" no iPhone");
+            if(VerificarAplicativo(nomeApp))
+            {
+                Console.WriteLine($"Instalando o aplicativo \"{nomeApp}\" no iPhone");
+            }
+        }
+
+        // Método selado, ele não pode ser sobrescrito nas classes filhas
+        public sealed override void ExibirConfiguracoes()
+        {
+            Console.WriteLine($"As configurações do iPhone {Modelo} são: {Memoria} gigas de armazenamento e IMEI: {IMEI}");
         }
     }
 }
